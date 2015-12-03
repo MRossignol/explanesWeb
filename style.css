@@ -1,0 +1,86 @@
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+
+body {
+    font-family: Helvetica, Arial, sans serif;
+    font-size: 12px;
+    background-color: #113322;
+    color: #eee;
+}
+
+div#page {
+    width: 960px;
+    margin: auto;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+div#top {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+div#profile {
+    width: 800px;
+    margin: auto;
+    height: 250px;
+    background-color: #44a;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 50px;
+}
+
+div#tabs {
+    width: 100%;
+    overflow: hidden;
+}
+
+div.tab {
+    float: left;
+    width: 20%;
+    cursor: pointer;
+    background-color: #88e;
+    color: black;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+div.tab:hover {
+    background-color: #bbe;
+}
+
+div.tab.selected {
+    background-color: #aad;
+}
+
+div#textPanels {
+    clear: both;
+    position: relative;
+    width: 4800px;
+    transition: left 0.2s;
+}
+
+div.panel {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: #bbc;
+    color: black;
+    padding: 15px;
+}
+
+div#footer {
+    color: #aaa;
+    margin-top: 30px;
+    text-align: center;
+}

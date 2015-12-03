@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="explanes">
+
+  <head>
+    <meta charset="utf-8" /> 
+    <title>Explanes</title>
+    <script src="angular.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+
+  <body>
+
+    <div id="page" ng-controller="PageController">
+
+      <div id="top">
+	<h1>Explanes</h1>
+	<h3>Beautiful computational experiments</h3>
+      </div>
+
+      <div id="profile">
+	Profil
+      </div>
+
+      <div id="contents">
+	<div id="tabs">
+	  <div ng-class="{'tab':true, 'selected':(activeSection==$index)}"
+	       ng-repeat="panel in panels"
+	       ng-click="setSection($index)">
+	    {{panel.name}}
+	  </div>
+	</div>
+	<div id="textPanels"
+	     ng-style="{'left':(-960*activeSection)+'px', 'height':textHeight+'px'}">
+	  <div class="panel"
+	       id="panel-{{$index}}"
+	       ng-repeat="panel in panels"
+	       ng-include="panel.page"
+	       ng-style="{'left':(960*$index)+'px'}"
+	       onload="setSection(0)"
+	  </div>
+	</div>
+      </div>
+
+      <div id="footer">
+	Footer
+      </div>
+      
+    </div>
+    
+  </body>
+</html>
