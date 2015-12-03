@@ -71,7 +71,7 @@ div#textPanels {
 }
 
 div.panel {
-    width: 100%;
+    width: 960px;
     position: absolute;
     top: 0px;
     background-color: #bbc;
