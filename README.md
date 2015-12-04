@@ -10,3 +10,5 @@ C'est de l'angular relativement bateau, juste 2 choses a noter :
 Pour la partie slideshow / profil en haut, je ne savais pas ce que tu voulais mettre, donc ce'st juste un placeholder.
 
 Style, couleurs, etc., sont bien sur a revoir.
+
+toto
