@@ -28,6 +28,7 @@ div#top {
 }
 
 div#profile {
+    position: relative;
     width: 800px;
     margin: auto;
     height: 250px;
@@ -35,6 +36,47 @@ div#profile {
     text-align: center;
     margin-bottom: 40px;
     padding: 50px;
+    overflow: hidden;
+}
+
+div.profileSlide {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 250px;
+}
+
+div.profileSlide img {
+    position: absolute;
+    top: 0px;
+    transition: left 0.5s ease-in;
+}
+
+div.slideSlice {
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    height: 250px;
+    transition: all 0.5s ease-in;
+}
+
+div.profileTitle {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    color: #222;
+    transition: opacity 0.3s;
+    color: #f0f;
+}
+
+div.bullet {
+    position: absolute;
+    width: 400px;
+    transition: all 0.5s;
+    color: #222;
+    color: #f0f;
 }
 
 div#tabs {
