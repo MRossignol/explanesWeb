@@ -24,7 +24,15 @@
       </div>
 
       <div id="profile">
-	Profil
+	<div class="profileSlide" ng-repeat="slide in slides"
+	     ng-style="{zIndex:slide.position+5, display:slide.display}">
+	  <div class="slideSlice" ng-repeat="slice in slide.slices"
+	       ng-style="{left:(slice.x)+'px', width:slice.w+'px'}">
+	    <img ng-src="{{slide.photo}}" ng-style="{left:(-slice.x)+'px'}"/>
+	  </div>
+	  <div class="profileTitle" ng-style="{opacity:slide.textOpacity}">{{slide.text}}</div>
+	  <div class="bullet" ng-repeat="bullet in slide.bullets" ng-style="bullet.style">{{bullet.text}}</div>
+	</div>
       </div>
 
       <div id="contents">
