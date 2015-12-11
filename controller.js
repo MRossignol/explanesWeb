@@ -13,24 +13,25 @@ app.controller("PageController", function($scope, $timeout, $interval) {
     $scope.setSection = function (i) {
 	$scope.activeSection = i;
 	$scope.textHeight = document.getElementById('panel-'+i).offsetHeight;
+	$timeout(function(){$scope.textHeight = document.getElementById('panel-'+i).offsetHeight;}, 1000);
     }
 
     $scope.slides = [
-	{position: 0, text:"Master", photo:"images/slide1.jpg", color:"#eea", textOpacity: 0, bullets:[
+	{position: 0, text:"Master", photo:"images/slide-1.jpg", color:"#eea", textOpacity: 0, bullets:[
 	    {text:"bullet 1"},
 	    {text:"bullet 2"}]
 	},
-	{position: 1, text:"Ph.D.", photo:"images/slide2.jpg", color:"#aae", textOpacity: 0, bullets:[
+	{position: 1, text:"Ph.D.", photo:"images/slide-2.jpg", color:"#aae", textOpacity: 0, bullets:[
 	    {text:"bullet 1"},
 	    {text:"bullet 2"},
 	    {text:"bullet 3"},
 	    {text:"bullet 4"}]
 	},
-	{position: 2, text:"Postdoctoral fellow", photo:"images/slide3.jpg", color:"#aea", textOpacity: 0, bullets:[
+	{position: 2, text:"Postdoctoral fellow", photo:"images/slide-3.jpg", color:"#aea", textOpacity: 0, bullets:[
 	    {text:"bullet 1"},
 	    {text:"bullet 2"}]
 	},
-	{position: 3, text:"Tenured researcher", photo:"images/slide4.jpg", color:"#eaa", textOpacity: 0, bullets:[
+	{position: 3, text:"Tenured researcher", photo:"images/slide-4.jpg", color:"#eaa", textOpacity: 0, bullets:[
 	    {text:"bullet 1"},
 	    {text:"bullet 2"},
 	    {text:"bullet 3"}]
@@ -81,18 +82,17 @@ app.controller("PageController", function($scope, $timeout, $interval) {
 	    accW += w;
 	    acc += sliceSizes[i];
 	}
-	$timeout(function () {
-	    for (var i=0; i<nbSlices; i++) {
-		slide.slices[i].x = slide.slices[i].targetX+(slide.slices[i].targetX-slide.slices[i].x)/2;
-		slide.slices[i].w = slide.slices[i].targetW/3;
-	    }}, 0);
+	// $timeout(function () {
+	//     for (var i=0; i<nbSlices; i++) {
+	// 	slide.slices[i].x = slide.slices[i].targetX+(slide.slices[i].targetX-slide.slices[i].x)/2;
+	// 	slide.slices[i].w = slide.slices[i].targetW/3;
+	//     }}, 0);
 	$timeout(function () {
 	    for (var i=0; i<nbSlices; i++) {
 		slide.slices[i].x = slide.slices[i].targetX;
 		slide.slices[i].w = slide.slices[i].targetW;
 		slide.textOpacity = 1;
-		console.log(slide.slices[i]);
-	    }}, 300);
+	    }}, 0);
 	showBullets(slide);
     }
     
@@ -116,7 +116,7 @@ app.controller("PageController", function($scope, $timeout, $interval) {
     for (var s=0, nbSlides = $scope.slides.length; s<nbSlides; s++)
 	hideBullets($scope.slides[s]);
     
-    showSlide($scope.slides[0]);
+    $timeout(showSlide.curry($scope.slides[0]), 0);
     
     $interval(cycleSlides, 5000);
     
