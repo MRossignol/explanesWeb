@@ -12,29 +12,29 @@ app.controller("PageController", function($scope, $timeout, $interval) {
 
     $scope.setSection = function (i) {
 	$scope.activeSection = i;
-	$scope.textHeight = document.getElementById('panel-'+i).offsetHeight;
-	$timeout(function(){$scope.textHeight = document.getElementById('panel-'+i).offsetHeight;}, 1000);
+	$timeout(function() {
+	    var e = document.getElementById('panel-'+i);
+	    if (e) $scope.textHeight = e.offsetHeight;}, 0);
     }
 
     $scope.slides = [
 	{position: 0, text:"Master", photo:"images/slide-1.jpg", color:"#eea", textOpacity: 0, bullets:[
-	    {text:"bullet 1"},
-	    {text:"bullet 2"}]
+	    {text:"First steps in the scientific community"},
+	    {text:"Compare your work with existing references"}]
 	},
 	{position: 1, text:"Ph.D.", photo:"images/slide-2.jpg", color:"#aae", textOpacity: 0, bullets:[
-	    {text:"bullet 1"},
-	    {text:"bullet 2"},
-	    {text:"bullet 3"},
-	    {text:"bullet 4"}]
+	    {text:"Keep track of large amount of code and experiments"},
+	    {text:"Make your experimental results publishable"},
+	    {text:"Stay focused and efficient on the long run"}]
 	},
 	{position: 2, text:"Postdoctoral fellow", photo:"images/slide-3.jpg", color:"#aea", textOpacity: 0, bullets:[
-	    {text:"bullet 1"},
-	    {text:"bullet 2"}]
+	    {text:"Stay organized, with many different projects to juggle at once"},
+	    {text:"Publish!"}]
 	},
 	{position: 3, text:"Tenured researcher", photo:"images/slide-4.jpg", color:"#eaa", textOpacity: 0, bullets:[
-	    {text:"bullet 1"},
-	    {text:"bullet 2"},
-	    {text:"bullet 3"}]
+	    {text:"Easily switch between numerous projects"},
+	    {text:"Keep your computer working for you while you're in meetings"},
+	    {text:"Standardize the way your students organize their code and data"}]
 	}
     ];
 
@@ -43,14 +43,14 @@ app.controller("PageController", function($scope, $timeout, $interval) {
 	var startY = -100;
 	var endY = 500;
 	for (var i=0; i<nbBullets; i++)
-	    slide.bullets[i].style = {left:'810px', top:Math.round(startY+i*(endY-startY)/(nbBullets+1))+'px', opacity: 0, fontSize:'60px'};
+	    slide.bullets[i].style = {left:'810px', top:Math.round(startY+i*(endY-startY)/(nbBullets+1))+'px', opacity: 0, fontSize:'60px', width:'1400px'};
     }
 
     var showBullet = function(slide, i) {
 	var nbBullets = slide.bullets.length;
 	var startY = 80;
 	var endY = 280;
-	slide.bullets[i].style = {left:'300px', top:Math.round(startY+i*(endY-startY)/(nbBullets+1))+'px', opacity: 1, fontSize:'18px'};
+	slide.bullets[i].style = {left:'380px', top:Math.round(startY+i*(endY-startY)/(nbBullets+1))+'px', opacity: 1, fontSize:'18px', width:'400px'};
     }
 
     var showBullets = function (slide) {
@@ -119,5 +119,8 @@ app.controller("PageController", function($scope, $timeout, $interval) {
     $timeout(showSlide.curry($scope.slides[0]), 0);
     
     $interval(cycleSlides, 5000);
+    
+    $scope.$on('$includeContentLoaded', function (e) {console.log(e); $scope.setSection(0);})
+    $scope.setSection(0);
     
 });

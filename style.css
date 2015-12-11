@@ -10,7 +10,7 @@ body {
     font-family: Helvetica, Arial, sans serif;
     font-size: 12px;
     background-color: #e0d8ff;
-    color: #650;
+    color: #540;
 }
 
 div#page {
@@ -25,7 +25,7 @@ div#top {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 40px;
-    font-family: 'Old Standard TT';
+    font-family: 'Libre Baskerville';
 }
 
 div#profile {
@@ -69,14 +69,14 @@ div.profileTitle {
     top: 20px;
     font-size: 24px;
     color: #222;
-    transition: opacity 0.3s;
+    transition: opacity 0.7s;
 }
 
 div.bullet {
     position: absolute;
-    width: 400px;
     transition: all 0.5s;
     color: #222;
+    text-align: left;
 }
 
 div#tabs {
@@ -92,12 +92,13 @@ div.tab {
     width: 20%;
     cursor: pointer;
     background-color: #cb8;
-    color: black;
+    color: #430;
     text-align: center;
     height: 40px;
     line-height: 40px;
     vertical-align: middle;
-    font-size: 14px;
+    font-size: 15px;
+    font-family: 'Libre Baskerville';
     border-right: 1px dashed #750;
 }
 
