@@ -10,6 +10,25 @@ app.controller("PageController", function($scope, $timeout, $interval) {
 	//{"name":"Get involved", "page":"pages/involved.html", "anchor":""},
     ];
 
+
+    var scrollSpeedMult = 0;
+    var progressiveScrollTo = function (y) {
+	scrollSpeedMult++;
+	var delta = Math.round(scrollSpeedMult*(y-window.scrollY)*scrollSpeedMult/150);
+	if (Math.abs(delta) < 5) window.scrollTo(0, y);
+	else {
+	    window.scrollTo(0, window.scrollY+delta);
+	    setTimeout(progressiveScrollTo.curry(y), 50);
+	}
+    }
+    
+    $scope.scrollTo = function (id) {
+	var coords = pageCoordinates(document.getElementById(id));
+	scrollSpeedMult = 3;
+	//window.scrollTo(0, coords.y - 50);
+	progressiveScrollTo(coords.y - 50);
+    }
+    
     $scope.setSection = function (i) {
 	$scope.activeSection = i;
 	$timeout(function() {

@@ -11,6 +11,7 @@ body {
     font-size: 12px;
     background-color: #e8e0ff;
     color: #540;
+    scroll-behavior: smooth;
 }
 
 div#page {

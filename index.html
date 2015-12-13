@@ -30,16 +30,14 @@
       
       <div id="menu" ng-class="isAbsolute && 'normalMenu' || 'fixedMenu'">
 	<!-- <a href="#you">For whom?</a> &mdash; -->
-	<a href="##overview">Overview</a> &mdash;
-	<a href="##download">Download</a> &mdash;
-	<a href="##get_started">Get started</a> &mdash;
-	<a href="##demos">Demos</a> &mdash;
-	<a href="##doc">Documentation</a>
+	<a href="" ng-click="scrollTo('overview')">Overview</a> &mdash;
+	<a href="" ng-click="scrollTo('download')">Download</a> &mdash;
+	<a href="" ng-click="scrollTo('get_started')">Get started</a> &mdash;
+	<a href="" ng-click="scrollTo('demos')">Demos</a> &mdash;
+	<a href="" ng-click="scrollTo('doc')">Documentation</a>
       </div>
     
       <div id="page">
-
-	<div class="anchor"><a name="#you"/></div>
 
 	<div id="profile">
 	  <div class="profileSlide" ng-repeat="slide in slides"
@@ -54,8 +52,7 @@
 	</div>
 
 	<div ng-repeat = "panel in panels">
-	  <div class="anchor"><a name="#{{panel.anchor}}"/></div>
-	  <h1>{{panel.name}}</h1>
+	  <h1 id="{{panel.anchor}}">{{panel.name}}</h1>
 	  <div class="panel"
 	       id="panel-{{$index}}"
 	       ng-include="panel.page">
