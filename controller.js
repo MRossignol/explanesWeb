@@ -4,6 +4,7 @@ app.controller("PageController", function($scope, $timeout, $interval) {
 
     $scope.panels = [
 	{"name":"Overview", "page":"pages/overview.html", "anchor":"overview"},
+	{"name":"Download", "page":"pages/download.html", "anchor":"download"},
 	{"name":"Get started", "page":"pages/getting_started.html", "anchor":"get_started"},
 	{"name":"Demos", "page":"pages/demo.html", "anchor":"demos"},
 	{"name":"Documentation", "page":"pages/documentation.html", "anchor":"doc"},
@@ -77,7 +78,7 @@ app.controller("PageController", function($scope, $timeout, $interval) {
 	    $timeout(showBullet.curry(slide, i), 800+2500*i/l)
     }
 
-    var nbSlices = 8;
+    var nbSlices = 2;
     var showSlide = function (slide) {
 	slide.slices = [];
 	var width = 800;
