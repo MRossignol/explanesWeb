@@ -130,6 +130,24 @@ function stopEvent (e) {
     if (e.preventDefault) e.preventDefault();
 }
 
+// Taken from MDN : create optimized versions of rapid-fire events, that are called at most once per redraw
+;(function() {
+    var throttle = function(type, name) {
+        var running = false;
+        var func = function() {
+            if (running) { return; }
+            running = true;
+            requestAnimationFrame(function() {
+                window.dispatchEvent(new CustomEvent(name));
+                running = false;
+            });
+        };
+        window.addEventListener(type, func);
+    };
+    throttle ("scroll", "optimizedScroll");
+})();
+
+
 // Web Audio stuff
 
 function dBToAmp (db) {
@@ -452,3 +470,4 @@ function fft (ar, ai, ind) {
       }
     }
   };
+

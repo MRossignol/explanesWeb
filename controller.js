@@ -3,11 +3,11 @@ app.controller("PageController", function($scope, $timeout, $interval) {
     $scope.textHeight = 0;
 
     $scope.panels = [
-	{"name":"Demo", "page":"pages/demo.html"},
-	{"name":"Overview", "page":"pages/overview.html"},
-	{"name":"Get started", "page":"pages/getting_started.html"},
-	{"name":"Documentation", "page":"pages/documentation.html"},
-	{"name":"Get involved", "page":"pages/involved.html"},
+	{"name":"Overview", "page":"pages/overview.html", "anchor":"overview"},
+	{"name":"Get started", "page":"pages/getting_started.html", "anchor":"get_started"},
+	{"name":"Demos", "page":"pages/demo.html", "anchor":"demos"},
+	{"name":"Documentation", "page":"pages/documentation.html", "anchor":"doc"},
+	//{"name":"Get involved", "page":"pages/involved.html", "anchor":""},
     ];
 
     $scope.setSection = function (i) {
@@ -122,5 +122,15 @@ app.controller("PageController", function($scope, $timeout, $interval) {
     
     $scope.$on('$includeContentLoaded', function (e) {console.log(e); $scope.setSection(0);})
     $scope.setSection(0);
+
+    $scope.isAbsolute = true;
+    $scope.absoluteStyle = {position:"absolute", top: "100px", left:"10px"};
+    $scope.fixedStyle = {position:"fixed", top: "0px", left:"10px"};
+    window.addEventListener("optimizedScroll", function () {
+	if (window.scrollY > 200 && $scope.isAbsolute)
+	    $scope.$apply("isAbsolute = false");
+	else if (window.scrollY <= 200 && !$scope.isAbsolute)
+	    $scope.$apply("isAbsolute = true");
+    });
     
 });

@@ -16,52 +16,56 @@
 
   <body>
 
-    <div id="page" ng-controller="PageController">
-
-<a href="https://github.com/mathieulagrange/expLanes"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-
+      
+    <a href="https://github.com/mathieulagrange/expLanes">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"/>
+    </a>
+    
+    <div ng-controller="PageController">
 
       <div id="top">
-	<h2 style="font-size: 48px; margin-bottom: 10px">Explanes</h1>
+	<h2 style="font-size: 48px; margin-bottom: 10px">Explanes</h2>
 	<h3 style="font-size: 20px; font-style: italic">Beautiful computational experiments</h3>
       </div>
-
-      <div id="profile">
-	<div class="profileSlide" ng-repeat="slide in slides"
-	     ng-style="{zIndex:slide.position+5, display:slide.display}">
-	  <div class="slideSlice" ng-repeat="slice in slide.slices"
-	       ng-style="{left:(slice.x)+'px', width:slice.w+'px'}">
-	    <img ng-src="{{slide.photo}}" ng-style="{left:(-slice.x)+'px'}"/>
-	  </div>
-	  <div class="profileTitle" ng-style="{opacity:slide.textOpacity}">{{slide.text}}</div>
-	  <div class="bullet" ng-repeat="bullet in slide.bullets" ng-style="bullet.style">{{bullet.text}}</div>
-	</div>
+      
+      <div id="menu" ng-class="isAbsolute && 'normalMenu' || 'fixedMenu'">
+	<!-- <a href="#you">For whom?</a> &mdash; -->
+	<a href="##overview">Overview</a> &mdash;
+	<a href="##download">Download</a> &mdash;
+	<a href="##get_started">Get started</a> &mdash;
+	<a href="##demos">Demos</a> &mdash;
+	<a href="##doc">Documentation</a>
       </div>
+    
+      <div id="page">
 
-      <div id="contents">
-	<div id="tabs">
-	  <div ng-class="{'tab':true, 'selected':(activeSection==$index)}"
-	       ng-repeat="panel in panels"
-	       ng-click="setSection($index)">
-	    {{panel.name}}
+	<div class="anchor"><a name="#you"/></div>
+
+	<div id="profile">
+	  <div class="profileSlide" ng-repeat="slide in slides"
+	       ng-style="{zIndex:slide.position+5, display:slide.display}">
+	    <div class="slideSlice" ng-repeat="slice in slide.slices"
+		 ng-style="{left:(slice.x)+'px', width:slice.w+'px'}">
+	      <img ng-src="{{slide.photo}}" ng-style="{left:(-slice.x)+'px'}"/>
+	    </div>
+	    <div class="profileTitle" ng-style="{opacity:slide.textOpacity}">{{slide.text}}</div>
+	    <div class="bullet" ng-repeat="bullet in slide.bullets" ng-style="bullet.style">{{bullet.text}}</div>
 	  </div>
 	</div>
-	<div id="textPanels"
-	     ng-style="{'left':(-960*activeSection)+'px', 'height':textHeight+'px'}">
+
+	<div ng-repeat = "panel in panels">
+	  <div class="anchor"><a name="#{{panel.anchor}}"/></div>
+	  <h1>{{panel.name}}</h1>
 	  <div class="panel"
 	       id="panel-{{$index}}"
-	       ng-repeat="panel in panels"
-	       ng-include="panel.page"
-	       ng-style="{'left':(960*$index)+'px'}"
+	       ng-include="panel.page">
 	  </div>
 	</div>
-      </div>
-
-      <div id="footer">
-	Footer
-      </div>
       
+	<div id="footer">
+	  Footer
+	</div>
+      </div>
     </div>
-    
   </body>
 </html>
