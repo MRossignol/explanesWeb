@@ -3,13 +3,33 @@ app.controller("PageController", function($scope, $timeout, $interval) {
     $scope.textHeight = 0;
 
     $scope.panels = [
-	{"name":"Demo", "page":"pages/demo.html"},
-	{"name":"Overview", "page":"pages/overview.html"},
-	{"name":"Get started", "page":"pages/getting_started.html"},
-	{"name":"Documentation", "page":"pages/documentation.html"},
-	{"name":"Get involved", "page":"pages/involved.html"},
+	{"name":"Overview", "page":"pages/overview.html", "anchor":"overview"},
+	{"name":"Download", "page":"pages/download.html", "anchor":"download"},
+	{"name":"Get started", "page":"pages/getting_started.html", "anchor":"get_started"},
+	{"name":"Demos", "page":"pages/demo.html", "anchor":"demos"},
+	{"name":"Documentation", "page":"pages/documentation.html", "anchor":"doc"},
+	//{"name":"Get involved", "page":"pages/involved.html", "anchor":""},
     ];
 
+
+    var scrollSpeedMult = 0;
+    var progressiveScrollTo = function (y) {
+	scrollSpeedMult++;
+	var delta = Math.round(scrollSpeedMult*(y-window.scrollY)*scrollSpeedMult/150);
+	if (Math.abs(delta) < 5) window.scrollTo(0, y);
+	else {
+	    window.scrollTo(0, window.scrollY+delta);
+	    setTimeout(progressiveScrollTo.curry(y), 50);
+	}
+    }
+    
+    $scope.scrollTo = function (id) {
+	var coords = pageCoordinates(document.getElementById(id));
+	scrollSpeedMult = 3;
+	//window.scrollTo(0, coords.y - 50);
+	progressiveScrollTo(coords.y - 50);
+    }
+    
     $scope.setSection = function (i) {
 	$scope.activeSection = i;
 	$timeout(function() {
@@ -58,7 +78,7 @@ app.controller("PageController", function($scope, $timeout, $interval) {
 	    $timeout(showBullet.curry(slide, i), 800+2500*i/l)
     }
 
-    var nbSlices = 8;
+    var nbSlices = 2;
     var showSlide = function (slide) {
 	slide.slices = [];
 	var width = 800;
@@ -122,5 +142,15 @@ app.controller("PageController", function($scope, $timeout, $interval) {
     
     $scope.$on('$includeContentLoaded', function (e) {console.log(e); $scope.setSection(0);})
     $scope.setSection(0);
+
+    $scope.isAbsolute = true;
+    $scope.absoluteStyle = {position:"absolute", top: "100px", left:"10px"};
+    $scope.fixedStyle = {position:"fixed", top: "0px", left:"10px"};
+    window.addEventListener("optimizedScroll", function () {
+	if (window.scrollY > 200 && $scope.isAbsolute)
+	    $scope.$apply("isAbsolute = false");
+	else if (window.scrollY <= 200 && !$scope.isAbsolute)
+	    $scope.$apply("isAbsolute = true");
+    });
     
 });
