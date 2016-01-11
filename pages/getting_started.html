@@ -1,9 +1,12 @@
-<h2>Getting started</h2>
+<h3 style="margin-top: 5px">Requisites</h3>
 
-Getting started with explanes is simple:
+<p>expLanes operates in the Matlab environment. A recent version of this software (> R2014) is needed as well as the Statistical toolbox. The Parallel toolbox is needed for in-session multi-core processing. As much as possible, expLanes uses built-in tools to manipulate data. However some functions are handled through the use of basic Unix tools:</p>
 
-use a recent version of Matlab
-download or clone explanes
-add explanes to your Matlab path:
-create your first experiment (<a href="http://mathieulagrange.github.io/expLanes/doc/expLanesDocumentation.pdf#page=5"> geometricShape </a>)
+<ul>
+  <li><strong>pdflatex</strong>: handles compilation of reports written in LATEX.</li>
+  <li><strong>rsync</strong>: allows backup, generation of bundles and data communication between hosts.</li>
+  <li><strong>ssh</strong>: allows secure connection between hosts.</li>
+  <li><strong>screen</strong>: allows handling of several detached terminals for background processing.</li>
+</ul>
 
+<p>If you wish to deploy your experiment across multiple hosts, those tools must be available on each host. However, expLanes will adapt to their absence, when possible: for example, without pdflatex, no reports will be generated.</p>

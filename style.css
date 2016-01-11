@@ -9,7 +9,7 @@
 body {
     font-family: Helvetica, Arial, sans serif;
     font-size: 12px;
-    background-color: #e8e0ff;
+    background-color: #f0e8ff;
     color: #540;
     scroll-behavior: smooth;
 }
@@ -191,9 +191,10 @@ div#textPanels {
 
 div.panel {
     width: 100%;
-    background-color: #eed;
+    background-color: #ffe;
     color: black;
     padding: 15px;
+    font-size: 16px;
 }
 
 div#footer {
@@ -204,7 +205,7 @@ div#footer {
 
 div#menu {
     text-align: center;
-    background-color: #e8e0ff;
+    background-color: #f0e8ff;
     left: 0px;
     width: 100%;
     padding: 10px;
@@ -250,4 +251,8 @@ h1 {
     font-family: 'Libre Baskerville';
     text-align: left;
     margin-top: 30px;
+}
+
+div.panel li {
+    margin-top: 15px;
 }
