@@ -5,14 +5,35 @@
     -webkit-box-sizing: border-box;
 }
 
-
 body {
     font-family: Helvetica, Arial, sans serif;
     font-size: 12px;
     background-color: #f0e8ff;
     color: #540;
-    scroll-behavior: smooth;
     line-height: 180%;
+}
+
+div.panel {
+    width: 100%;
+    background-color: #ffe;
+    color: black;
+    padding: 15px;
+    font-size: 16px;
+}
+
+div#footer {
+    color: #aaa;
+    margin-top: 30px;
+    text-align: center;
+}
+
+div#menu {
+    text-align: center;
+    background-color: #f0e8ff;
+    left: 0px;
+    width: 100%;
+    padding: 10px;
+    z-index: 100;
 }
 
 div#page {
@@ -58,14 +79,14 @@ div.carouselArrow {
     top: 132px;
     width: 24px;
     height: 36px;
-    opacity: 0.4;
+    opacity: 0.8;
     transition: opacity 0.1s;
     cursor: pointer;
     z-index: 10;
 }
 
 div.carouselArrow:hover {
-    opacity: 0.8;
+    opacity: 1;
 }
 
 div.carouselLeftArrow {
@@ -99,15 +120,6 @@ div.demoCarousel {
     margin-top: 30px;
 }
 
-div.demoCarousel div.carouselArrow {
-    top: 80px;
-    opacity: 0.7;
-}
-
-div.demoCarousel div.carouselArrow:hover{
-    opacity: 1;
-}
-
 div.demoSlideContainer {
     height: 775px;
 }
@@ -136,7 +148,7 @@ div.profileSlide img {
 div.profileThumbnails {
     position: absolute;
     top: 320px;
-    left: 730px;
+    left: 395px;
     height: 48px;
     width: 170px;
 }
@@ -169,9 +181,9 @@ div.profileTitle {
 div.bullet {
     position: absolute;
     transition: all 0.5s;
-    color: #222;
+    color: #eee;
     text-align: left;
-    background-color: rgba(220, 230, 255, .8);
+    background-color: rgba(0, 0, 0, .8);
     padding: 3px;
 }
 
@@ -212,29 +224,6 @@ div#textPanels {
     position: relative;
     width: 4800px;
     transition: left 0.2s;
-}
-
-div.panel {
-    width: 100%;
-    background-color: #ffe;
-    color: black;
-    padding: 15px;
-    font-size: 16px;
-}
-
-div#footer {
-    color: #aaa;
-    margin-top: 30px;
-    text-align: center;
-}
-
-div#menu {
-    text-align: center;
-    background-color: #f0e8ff;
-    left: 0px;
-    width: 100%;
-    padding: 10px;
-    z-index: 100;
 }
 
 div#menu div {
