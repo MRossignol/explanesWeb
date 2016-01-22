@@ -6,6 +6,7 @@ app.controller("PageController", function($scope, $timeout, $interval) {
 	{"name":"Get started", "page":"pages/getting_started.html", "anchor":"get_started"},
 	{"name":"Demos", "page":"pages/demo.html", "anchor":"demos"},
 	{"name":"Documentation", "page":"pages/documentation.html", "anchor":"doc"},
+	{"name":"Contact / Contribute", "page":"pages/contact.html", "anchor":"contact"},
 	//{"name":"Get involved", "page":"pages/involved.html", "anchor":""},
     ];
 

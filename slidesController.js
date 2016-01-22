@@ -90,6 +90,6 @@ app.controller("SlidesController", function($scope, $timeout, $interval) {
 
     $timeout(showBullets.curry($scope.slides[0]), 1000);
     
-    $scope.profileInterval = $interval($scope.cycleSlides.curry(0), 5000);
+    $scope.profileInterval = $interval($scope.cycleSlides.curry(0), 10000);
     
 });
