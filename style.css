@@ -12,6 +12,7 @@ body {
     background-color: #f0e8ff;
     color: #540;
     scroll-behavior: smooth;
+    line-height: 180%;
 }
 
 div#page {
@@ -54,7 +55,7 @@ div.carousel {
 
 div.carouselArrow {
     position: absolute;
-    top: 107px;
+    top: 132px;
     width: 24px;
     height: 36px;
     opacity: 0.4;
@@ -86,11 +87,29 @@ div.slideContainer {
 }
 
 div.profileCarousel {
-    height: 320px;
+    height: 370px;
 }
 
 div.profileSlideContainer {
-    height: 250px;
+    height: 300px;
+}
+
+div.demoCarousel {
+    height: 775px;
+    margin-top: 30px;
+}
+
+div.demoCarousel div.carouselArrow {
+    top: 80px;
+    opacity: 0.7;
+}
+
+div.demoCarousel div.carouselArrow:hover{
+    opacity: 1;
+}
+
+div.demoSlideContainer {
+    height: 775px;
 }
 
 div.slide {
@@ -102,7 +121,11 @@ div.slide {
 }
 
 div.profileSlide {
-    height: 250px;
+    height: 300px;
+}
+
+div.demoSlide {
+    height: 775px;
 }
 
 div.profileSlide img {
@@ -112,7 +135,7 @@ div.profileSlide img {
 
 div.profileThumbnails {
     position: absolute;
-    top: 270px;
+    top: 320px;
     left: 730px;
     height: 48px;
     width: 170px;
@@ -148,6 +171,8 @@ div.bullet {
     transition: all 0.5s;
     color: #222;
     text-align: left;
+    background-color: rgba(220, 230, 255, .8);
+    padding: 3px;
 }
 
 div#tabs {
@@ -255,4 +280,27 @@ h1 {
 
 div.panel li {
     margin-top: 15px;
+}
+
+div.demoCarousel h3 {
+    margin: 0px;
+    height: 35px;
+}
+
+div.demoCarousel p {
+    margin: 0px;
+    height: 30px;
+}
+
+div.demoCarousel div.demoInclude {
+    height: 80px;
+}
+
+div.demoCarousel h4 {
+    margin: 0px;
+    height: 30px;
+}
+
+div.demoCarousel iframe {
+    margin: 0px;
 }

@@ -7,7 +7,9 @@
     <script src="angular.min.js"></script>
     <script src="utils.js"></script>
     <script src="app.js"></script>
-    <script src="controller.js"></script>
+    <script src="pageController.js"></script>
+    <script src="slidesController.js"></script>
+    <script src="demosController.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400italic,700' rel='stylesheet' type='text/css'>
     <!--<link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400italic,700' rel='stylesheet' type='text/css'>-->
     <!--<link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet' type='text/css'>-->
@@ -39,7 +41,7 @@
     
       <div id="page">
 
-	<div class="carousel profileCarousel">
+	<div class="carousel profileCarousel" ng-controller="SlidesController">
 	  <div class="carouselArrow carouselLeftArrow" ng-click="cycleSlides(-1)"></div>
 	  <div class="carouselArrow carouselRightArrow" ng-click="cycleSlides(1)"></div>
 	  <div class="slideContainer profileSlideContainer">
