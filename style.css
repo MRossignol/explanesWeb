@@ -8,14 +8,14 @@
 body {
     font-family: Helvetica, Arial, sans serif;
     font-size: 12px;
-    background-color: #f0e8ff;
+    background-color: #eeeeee;
     color: #540;
     line-height: 180%;
 }
 
 div.panel {
     width: 100%;
-    background-color: #ffe;
+    background-color: #fefefe;
     color: black;
     padding: 15px;
     font-size: 16px;
@@ -29,7 +29,7 @@ div#footer {
 
 div#menu {
     text-align: center;
-    background-color: #f0e8ff;
+    background-color: #eeeeee;
     left: 0px;
     width: 100%;
     padding: 10px;
