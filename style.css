@@ -34,12 +34,13 @@ div#menu {
     width: 100%;
     padding: 10px;
     z-index: 100;
+    height: auto;
 }
 
 div#page {
     width: 960px;
     margin: auto;
-    margin-top: 250px;
+    margin-top: 230px;
     //overflow: hidden;
 }
 
@@ -55,6 +56,7 @@ div#top {
 
 div#top h2 {
     margin-top: 0px;
+    position: relative;
 }
 
 /*
@@ -79,14 +81,14 @@ div.carouselArrow {
     top: 132px;
     width: 24px;
     height: 36px;
-    opacity: 0.8;
+    opacity: 0.6;
     transition: opacity 0.1s;
     cursor: pointer;
     z-index: 10;
 }
 
 div.carouselArrow:hover {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 div.carouselLeftArrow {
@@ -115,15 +117,6 @@ div.profileSlideContainer {
     height: 300px;
 }
 
-div.demoCarousel {
-    height: 775px;
-    margin-top: 30px;
-}
-
-div.demoSlideContainer {
-    height: 775px;
-}
-
 div.slide {
     position: absolute;
     top: 0px;
@@ -134,10 +127,6 @@ div.slide {
 
 div.profileSlide {
     height: 300px;
-}
-
-div.demoSlide {
-    height: 775px;
 }
 
 div.profileSlide img {
@@ -185,6 +174,7 @@ div.bullet {
     text-align: left;
     background-color: rgba(0, 0, 0, .8);
     padding: 3px;
+    border-radius: 3px;
 }
 
 div#tabs {
@@ -227,10 +217,14 @@ div#textPanels {
 }
 
 div#menu div {
+    display: inline;
     width: auto;
+    padding: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
-div #menu a {
+div#menu a {
     margin-left: 15px;
     margin-right: 15px;
     text-decoration: none;
@@ -241,13 +235,20 @@ div #menu a {
 
 div.normalMenu {
     position: absolute;
-    top: 200px;
+    top: 180px;
 }
 
 div.fixedMenu {
     position: fixed;
     top: 0px;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, .2);
+}
+
+div.fixedMenu div {
+    background:url(images/logo.png);
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
 }
 
 .anchor {
@@ -271,6 +272,39 @@ div.panel li {
     margin-top: 15px;
 }
 
+div.demoCarousel {
+    height: 820px;
+    margin-top: 15px;
+}
+
+p.demoLinks {
+    text-align: center;
+    vertical-align: middle;
+    height: 25px;
+    width: 100%;
+    color: #540;
+}
+
+span.demoLink {
+    cursor: pointer;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 200px;
+}
+
+span.demoLink:hover {
+    text-decoration: underline;
+}
+
+div.demoSlideContainer {
+    height: 775px;
+    top: 45px;
+}
+
+div.demoSlide {
+    height: 775px;
+}
+
 div.demoCarousel h3 {
     margin: 0px;
     height: 35px;
@@ -292,4 +326,8 @@ div.demoCarousel h4 {
 
 div.demoCarousel iframe {
     margin: 0px;
+}
+
+.bold {
+    font-weight: bold;
 }

@@ -10,7 +10,7 @@ app.controller("SlidesController", function($scope, $timeout, $interval) {
 	    {text:"Make your experimental results publishable"},
 	    {text:"Stay focused and efficient on the long run"}]
 	},
-	{position: 2, text:"Postdoctoral fellow", photo:"images/slide-phd.jpg", thumbnail:"images/thumb-phd.png", color:"#aea", textOpacity: 0, bullets:[
+	{position: 2, text:"Postdoctoral fellow", photo:"images/slide-postdoc.jpg", thumbnail:"images/thumb-postdoc.png", color:"#aea", textOpacity: 0, bullets:[
 	    {text:"Stay organized, with many different projects to juggle at once"},
 	    {text:"Publish!"}]
 	},
@@ -33,11 +33,12 @@ app.controller("SlidesController", function($scope, $timeout, $interval) {
 	}, 300);
     }
 
+    var bulletY = [[120], [110, 190], [85, 155, 225]];
+
     var showBullet = function(slide, i) {
 	var nbBullets = slide.bullets.length;
-	var startY = 80;
-	var endY = 280;
-	slide.bullets[i].style = {left:'480px', top:Math.round(startY+i*(endY-startY)/(nbBullets+1))+'px', opacity: 1, fontSize:'18px', width:'300px'};
+	var y = bulletY[nbBullets-1][i];
+	slide.bullets[i].style = {left:'480px', top:y+'px', opacity: 1, fontSize:'18px', width:'300px'};
     }
 
     var showBullets = function (slide) {

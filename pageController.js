@@ -34,9 +34,9 @@ app.controller("PageController", function($scope, $timeout, $interval) {
     $scope.absoluteStyle = {position:"absolute", top: "100px", left:"10px"};
     $scope.fixedStyle = {position:"fixed", top: "0px", left:"10px"};
     window.addEventListener("optimizedScroll", function () {
-	if (window.scrollY > 200 && $scope.isAbsolute)
+	if (window.scrollY > 180 && $scope.isAbsolute)
 	    $scope.$apply("isAbsolute = false");
-	else if (window.scrollY <= 200 && !$scope.isAbsolute)
+	else if (window.scrollY <= 180 && !$scope.isAbsolute)
 	    $scope.$apply("isAbsolute = true");
     });
     

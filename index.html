@@ -26,18 +26,26 @@
     <div ng-controller="PageController">
 
       <div id="top">
-	<h2 style="font-size: 48px; margin-bottom: 10px">Explanes</h2>
+	<h2 style="font-size: 48px; margin-bottom: 10px">
+	  <span style="position:relative">
+	    <div style="position:absolute; left:-210px; top: -5px">
+	      <img src="images/logo.png" style="width: 120px"/>
+	    </div>
+	    Explanes
+	  </span>
+	</h2>
 	<h3 style="font-size: 20px; font-style: italic">Beautiful computational experiments</h3>
       </div>
       
       <div id="menu" ng-class="isAbsolute && 'normalMenu' || 'fixedMenu'">
-	<!-- <a href="#you">For whom?</a> &mdash; -->
-	<a href="" ng-click="scrollTo('overview')">Overview</a> &mdash;
-	<a href="" ng-click="scrollTo('download')">Download</a> &mdash;
-	<a href="" ng-click="scrollTo('get_started')">Get started</a> &mdash;
-	<a href="" ng-click="scrollTo('demos')">Demos</a> &mdash;
-	<a href="" ng-click="scrollTo('doc')">Documentation</a> &mdash;
-	<a href="" ng-click="scrollTo('contact')">Contact / Contribute</a>
+	<div>
+	  <a href="" ng-click="scrollTo('overview')">Overview</a> &mdash;
+	  <a href="" ng-click="scrollTo('download')">Download</a> &mdash;
+	  <a href="" ng-click="scrollTo('get_started')">Get started</a> &mdash;
+	  <a href="" ng-click="scrollTo('demos')">Demos</a> &mdash;
+	  <a href="" ng-click="scrollTo('doc')">Documentation</a> &mdash;
+	  <a href="" ng-click="scrollTo('contact')">Contact / Contribute</a>
+	</div>
       </div>
     
       <div id="page">
